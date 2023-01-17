@@ -32,17 +32,24 @@ export const createSquare = (offsetPositions, offsetScale) => {
     offsetScale + offsetPositions.y,
     offsetPositions.z
   );
+  cube1.name = "cube1";
+
   cube2.position.set(
     offsetScale + offsetPositions.x,
     offsetScale + offsetPositions.y,
     offsetPositions.z
   );
-  cube4.position.set(offsetPositions.x, offsetPositions.y, offsetPositions.z);
+  cube2.name = "cube2";
+
   cube3.position.set(
     offsetScale + offsetPositions.x,
     offsetPositions.y,
     offsetPositions.z
   );
+  cube3.name = "cube3";
+
+  cube4.position.set(offsetPositions.x, offsetPositions.y, offsetPositions.z);
+  cube4.name = "cube4";
 
   return { cube1, cube2, cube3, cube4 };
 };

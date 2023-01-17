@@ -1,7 +1,6 @@
 import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import * as dat from "dat.gui";
 import gsap from "gsap";
 import { cube1, cube2, cube3, cube4 } from "./create-square";
 import { createTetriminosL } from "./tetriminos-L/tetriminos-L";
@@ -9,7 +8,7 @@ import { createTetriminosT } from "./tetriminos-T/tetriminos-T";
 import { createTetriminosS } from "./tetriminos-S/tetriminos-S";
 import { createTetriminosI } from "./tetriminos-I/tetriminos-I";
 import { createTetriminosO } from "./tetriminos-O/tetriminos-O";
-
+import { createDebugGUI } from "./create-debug-ui";
 /**
  * Canvas
  */
@@ -19,12 +18,6 @@ const canvas = document.querySelector("canvas.webgl");
  * Scene
  */
 const scene = new THREE.Scene();
-
-/**
- * Axes Helper
- */
-const axesHelper = new THREE.AxesHelper(2);
-scene.add(axesHelper);
 
 /**
  * Objects
@@ -69,10 +62,7 @@ controls.enableDamping = true;
 /**
  * GUI
  */
-const gui = new dat.GUI({
-  // closed: true,
-  width: 400,
-});
+createDebugGUI([cube1, cube2, cube3, cube4], timeline, scene);
 
 /**
  * Renderer

@@ -1,16 +1,38 @@
-export const labelTetriminosO = "tetriminosO";
-export const labelTetriminosS = "tetriminosS";
-export const labelTetriminosT = "tetriminosT";
-export const labelTetriminosL = "tetriminosL";
-export const labelTetriminosI = "tetriminosI";
+import { getValueFromParameterNumber } from "./url-parser";
 
-export const squareSize = 2;
+const URLParamsScale = "scale";
+const URL_FLAG_OffsetX = "x";
+const URL_FLAG_OffsetY = "y";
+const URL_FLAG_OffsetZ = "z";
 
-export const offsetScale = squareSize;
+export const labelTetriminosL = "createTetriminosL";
+export const labelTetriminosT = "createTetriminosT";
+export const labelTetriminosS = "createTetriminosS";
+export const labelTetriminosI = "createTetriminosI";
+export const labelTetriminosO = "createTetriminosO";
 
-export const offsetPositionX = 1;
-export const offsetPositionY = 1;
-export const offsetPositionZ = 1;
+const defaultSquareSize = 0.5;
+const defaultOffsetPositionX = 0;
+const defaultOffsetPositionY = 0;
+const defaultOffsetPositionZ = 0;
+
+export const offsetScale = getValueFromParameterNumber(
+  URLParamsScale,
+  defaultSquareSize
+);
+
+export const offsetPositionX = getValueFromParameterNumber(
+  URL_FLAG_OffsetX,
+  defaultOffsetPositionX
+);
+export const offsetPositionY = getValueFromParameterNumber(
+  URL_FLAG_OffsetY,
+  defaultOffsetPositionY
+);
+export const offsetPositionZ = getValueFromParameterNumber(
+  URL_FLAG_OffsetZ,
+  defaultOffsetPositionZ
+);
 
 export const quarterTurn = Math.PI / 2;
 
