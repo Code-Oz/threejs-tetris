@@ -33,3 +33,7 @@ Use `?opts1=value&opts2=value` to pass options to the scene
 - `y`: number, ystarted position
 
 - `z`: number, z started position
+
+## Sequence
+
+Start from Tetrimino O -> L -> T -> S -> I -> O ...
