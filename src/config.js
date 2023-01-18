@@ -1,6 +1,6 @@
 import { getValueFromParameterNumber } from "./url-parser";
 
-const URLParamsScale = "scale";
+const URL_FLAG_Scale = "scale";
 const URL_FLAG_OffsetX = "x";
 const URL_FLAG_OffsetY = "y";
 const URL_FLAG_OffsetZ = "z";
@@ -23,7 +23,7 @@ const defaultOffsetPositionY = 0;
 const defaultOffsetPositionZ = 0;
 
 export const offsetScale = getValueFromParameterNumber(
-  URLParamsScale,
+  URL_FLAG_Scale,
   defaultSquareSize
 );
 
