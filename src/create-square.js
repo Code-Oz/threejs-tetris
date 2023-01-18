@@ -5,26 +5,27 @@ import {
   offsetPositionY,
   offsetPositionZ,
 } from "./config";
+import { textureApplyOrder } from "./textures";
 
 export const createSquare = (offsetPositions, offsetScale) => {
   const cube1 = new THREE.Mesh(
     new THREE.BoxGeometry(offsetScale, offsetScale, offsetScale),
-    new THREE.MeshBasicMaterial({ color: "blue" })
+    new THREE.MeshBasicMaterial({ map: textureApplyOrder[0] })
   );
 
   const cube2 = new THREE.Mesh(
     new THREE.BoxGeometry(offsetScale, offsetScale, offsetScale),
-    new THREE.MeshBasicMaterial({ color: "red" })
+    new THREE.MeshBasicMaterial({ map: textureApplyOrder[0] })
   );
 
   const cube3 = new THREE.Mesh(
     new THREE.BoxGeometry(offsetScale, offsetScale, offsetScale),
-    new THREE.MeshBasicMaterial({ color: "green" })
+    new THREE.MeshBasicMaterial({ map: textureApplyOrder[0] })
   );
 
   const cube4 = new THREE.Mesh(
     new THREE.BoxGeometry(offsetScale, offsetScale, offsetScale),
-    new THREE.MeshBasicMaterial({ color: "yellow" })
+    new THREE.MeshBasicMaterial({ map: textureApplyOrder[0] })
   );
 
   cube1.position.set(

@@ -9,6 +9,10 @@ import { createTetriminosS } from "./tetriminos-S/tetriminos-S";
 import { createTetriminosI } from "./tetriminos-I/tetriminos-I";
 import { createTetriminosO } from "./tetriminos-O/tetriminos-O";
 import { createDebugGUI } from "./create-debug-ui";
+import { updateCurrentTexture } from "./textures";
+
+const cubes = [cube1, cube2, cube3, cube4];
+
 /**
  * Canvas
  */
@@ -35,7 +39,12 @@ createTetriminosS(timeline);
 createTetriminosI(timeline);
 createTetriminosO(timeline);
 
-timeline.play();
+timeline
+  .play()
+  .repeat(-1)
+  .eventCallback("onRepeat", () => {
+    updateCurrentTexture(cubes);
+  });
 
 /**
  * Sizes
@@ -50,7 +59,6 @@ const sizes = {
  */
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height);
 camera.position.z = 3;
-// camera.lookAt(new THREE.Vector3(0, - 1, 0))
 scene.add(camera);
 
 /**
@@ -62,7 +70,7 @@ controls.enableDamping = true;
 /**
  * GUI
  */
-createDebugGUI([cube1, cube2, cube3, cube4], timeline, scene);
+createDebugGUI(cubes, timeline, scene);
 
 /**
  * Renderer

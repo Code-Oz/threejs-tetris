@@ -11,6 +11,12 @@ export const labelTetriminosS = "createTetriminosS";
 export const labelTetriminosI = "createTetriminosI";
 export const labelTetriminosO = "createTetriminosO";
 
+export const tetriminosL = "tetriminosL";
+export const tetriminosT = "tetriminosT";
+export const tetriminosS = "tetriminosS";
+export const tetriminosI = "tetriminosI";
+export const tetriminosO = "tetriminosO";
+
 const defaultSquareSize = 0.5;
 const defaultOffsetPositionX = 0;
 const defaultOffsetPositionY = 0;
@@ -37,4 +43,4 @@ export const offsetPositionZ = getValueFromParameterNumber(
 export const quarterTurn = Math.PI / 2;
 
 export const SEQUENCE_PACE = 1;
-export const TIME_BETWEEN_FIGURE = 0;
+export const TIME_BETWEEN_FIGURE = 1;
