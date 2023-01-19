@@ -7,26 +7,17 @@ import {
 } from "./config";
 import { textureApplyOrder } from "./textures";
 
+const geometry = new THREE.BoxGeometry(offsetScale, offsetScale, offsetScale);
+const material = new THREE.MeshToonMaterial({ map: textureApplyOrder[0] });
+
 export const createSquare = (offsetPositions, offsetScale) => {
-  const cube1 = new THREE.Mesh(
-    new THREE.BoxGeometry(offsetScale, offsetScale, offsetScale),
-    new THREE.MeshBasicMaterial({ map: textureApplyOrder[0] })
-  );
+  const cube1 = new THREE.Mesh(geometry, material);
 
-  const cube2 = new THREE.Mesh(
-    new THREE.BoxGeometry(offsetScale, offsetScale, offsetScale),
-    new THREE.MeshBasicMaterial({ map: textureApplyOrder[0] })
-  );
+  const cube2 = new THREE.Mesh(geometry, material);
 
-  const cube3 = new THREE.Mesh(
-    new THREE.BoxGeometry(offsetScale, offsetScale, offsetScale),
-    new THREE.MeshBasicMaterial({ map: textureApplyOrder[0] })
-  );
+  const cube3 = new THREE.Mesh(geometry, material);
 
-  const cube4 = new THREE.Mesh(
-    new THREE.BoxGeometry(offsetScale, offsetScale, offsetScale),
-    new THREE.MeshBasicMaterial({ map: textureApplyOrder[0] })
-  );
+  const cube4 = new THREE.Mesh(geometry, material);
 
   cube1.position.set(
     offsetPositions.x,
