@@ -10,6 +10,7 @@ import { createTetriminosI } from "./tetriminos-I/tetriminos-I";
 import { createTetriminosO } from "./tetriminos-O/tetriminos-O";
 import { createDebugGUI } from "./create-debug-ui";
 import { updateCurrentTexture } from "./textures";
+import { sizes } from "./config";
 
 const cubes = [cube1, cube2, cube3, cube4];
 
@@ -47,14 +48,6 @@ timeline
   });
 
 /**
- * Sizes
- */
-const sizes = {
-  width: 800,
-  height: 600,
-};
-
-/**
  * Light
  */
 const ambientLight = new THREE.AmbientLight(0xffffff, 1);
@@ -86,6 +79,19 @@ const renderer = new THREE.WebGLRenderer({
 });
 
 renderer.setSize(sizes.width, sizes.height);
+
+window.addEventListener("resize", () => {
+  // Update sizes
+  sizes.width = window.innerWidth;
+  sizes.height = window.innerHeight;
+
+  // Update camera
+  camera.aspect = sizes.width / sizes.height;
+  camera.updateProjectionMatrix();
+
+  // Update renderer
+  renderer.setSize(sizes.width, sizes.height);
+});
 
 const tick = () => {
   // Update controls

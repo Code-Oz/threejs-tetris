@@ -44,3 +44,11 @@ export const quarterTurn = Math.PI / 2;
 
 export const SEQUENCE_PACE = 1;
 export const TIME_BETWEEN_FIGURE = 1;
+
+/**
+ * Sizes
+ */
+export const sizes = {
+  width: window.innerWidth,
+  height: window.innerHeight,
+};
