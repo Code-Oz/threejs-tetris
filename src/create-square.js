@@ -8,16 +8,28 @@ import {
 import { textureApplyOrder } from "./textures";
 
 const geometry = new THREE.BoxGeometry(offsetScale, offsetScale, offsetScale);
-const material = new THREE.MeshToonMaterial({ map: textureApplyOrder[0] });
+// We are not using the same materials in order to debug each material for each cube like wireframe
 
 export const createSquare = (offsetPositions, offsetScale) => {
-  const cube1 = new THREE.Mesh(geometry, material);
+  const cube1 = new THREE.Mesh(
+    geometry,
+    new THREE.MeshToonMaterial({ map: textureApplyOrder[0] })
+  );
 
-  const cube2 = new THREE.Mesh(geometry, material);
+  const cube2 = new THREE.Mesh(
+    geometry,
+    new THREE.MeshToonMaterial({ map: textureApplyOrder[0] })
+  );
 
-  const cube3 = new THREE.Mesh(geometry, material);
+  const cube3 = new THREE.Mesh(
+    geometry,
+    new THREE.MeshToonMaterial({ map: textureApplyOrder[0] })
+  );
 
-  const cube4 = new THREE.Mesh(geometry, material);
+  const cube4 = new THREE.Mesh(
+    geometry,
+    new THREE.MeshToonMaterial({ map: textureApplyOrder[0] })
+  );
 
   cube1.position.set(
     offsetPositions.x,
